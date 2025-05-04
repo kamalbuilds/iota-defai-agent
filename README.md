@@ -1,27 +1,28 @@
 <div align="center">
 
-# Suna - Open Source Generalist AI Agent
+# IOTA DeFiAI - Intelligent Decentralized Finance
 
-(that acts on your behalf)
+(AI-powered DeFi solutions built on IOTA)
 
-![Suna Screenshot](frontend/public/banner.png)
+![IOTA DeFiAI Banner](frontend/public/thumbnail-dark.png)
 
-Suna is a fully open source AI assistant that helps you accomplish real-world tasks with ease. Through natural conversation, Suna becomes your digital companion for research, data analysis, and everyday challenges—combining powerful capabilities with an intuitive interface that understands what you need and delivers results.
-
-Suna's powerful toolkit includes seamless browser automation to navigate the web and extract data, file management for document creation and editing, web crawling and extended search capabilities, command-line execution for system tasks, website deployment, and integration with various APIs and services. These capabilities work together harmoniously, allowing Suna to solve your complex problems and automate workflows through simple conversations!
+IOTA DeFiAI is an open-source platform that enhances decentralized finance with AI-powered solutions for smarter lending, risk management, and investment strategies. By combining Suna's AI capabilities with IOTA's feeless blockchain and Move smart contracts, we create intelligent financial services that adapt to market conditions and user needs.
 
 [![License](https://img.shields.io/badge/License-Apache--2.0-blue)](./license)
 [![Discord Follow](https://dcbadge.limes.pink/api/server/Py6pCBUUPw?style=flat)](https://discord.gg/Py6pCBUUPw)
 [![Twitter Follow](https://img.shields.io/twitter/follow/kortixai)](https://x.com/kortixai)
 [![GitHub Repo stars](https://img.shields.io/github/stars/kortix-ai/suna)](https://github.com/kortix-ai/suna)
-[![Issues](https://img.shields.io/github/issues/kortix-ai/suna
-)](https://github.com/kortix-ai/suna/labels/bug)
 </div>
 
 
 ## Table of Contents
 
-- [Suna Architecture](#project-architecture)
+- [Overview](#overview)
+- [Key Features](#key-features)
+- [Technical Architecture](#technical-architecture)
+- [IOTA Integration](#iota-integration)
+- [AI Capabilities](#ai-capabilities)
+- [Project Architecture](#project-architecture)
   - [Backend API](#backend-api)
   - [Frontend](#frontend)
   - [Agent Docker](#agent-docker)
@@ -33,11 +34,66 @@ Suna's powerful toolkit includes seamless browser automation to navigate the web
 - [Acknowledgements](#acknowledgements)
 - [License](#license)
 
+## Overview
+
+IOTA DeFiAI brings artificial intelligence to decentralized finance on the IOTA blockchain. Our platform uses machine learning algorithms to analyze market trends, evaluate risks, and optimize investment strategies, all while leveraging IOTA's feeless, scalable infrastructure and Move smart contracts for secure financial operations.
+
+## Key Features
+
+- **Smart Lending**: AI-driven credit scoring and dynamic loan terms that adapt to market conditions and borrower behavior.
+- **Risk Shield**: Predictive analytics for market volatility and automated risk mitigation strategies.
+- **Portfolio Optimizer**: Automated investment strategies tailored to user preferences and risk tolerance.
+- **Market Insights**: Real-time analysis of on-chain and off-chain data to inform financial decisions.
+- **Protocol Guardian**: Automated security monitoring and threat detection for protocol safety.
+
+## Technical Architecture
+
+Our platform combines several cutting-edge technologies:
+
+```
+┌─────────────────────┐      ┌──────────────────────┐
+│ Frontend (Next.js)  │◄────►│ Backend (FastAPI)    │
+└──────────┬──────────┘      └──────────┬───────────┘
+           │                             │
+           ▼                             ▼
+┌─────────────────────┐      ┌──────────────────────┐
+│ Suna AI Agent       │◄────►│ ML Analytics Engine  │
+└──────────┬──────────┘      └──────────┬───────────┘
+           │                             │
+           ▼                             ▼
+┌─────────────────────────────────────────────────────┐
+│                IOTA Blockchain                       │
+├─────────────────────────────────────────────────────┤
+│ Move Smart Contracts (Lending, Investment, Risk)     │
+└─────────────────────────────────────────────────────┘
+```
+
+## Demo video
+
+## IOTA Integration
+
+IOTA DeFiAI takes full advantage of IOTA's unique features:
+
+- **Feeless Transactions**: Eliminating gas costs makes micro-transactions viable for DeFi operations.
+- **Scalability**: High throughput ensures the platform can handle numerous financial operations simultaneously.
+- **Move Smart Contracts**: We leverage IOTA Rebased's layer 1 Move smart contracts for secure, efficient financial applications.
+- **Interoperability**: Seamless integration with other blockchain networks for a comprehensive DeFi ecosystem.
+
+## AI Capabilities
+
+Our platform employs several advanced AI techniques:
+
+- **Predictive Analytics**: Forecasting market trends and asset performance.
+- **Natural Language Processing**: Analyzing market sentiment from news and social media.
+- **Reinforcement Learning**: Optimizing trading and investment strategies over time.
+- **Anomaly Detection**: Identifying unusual patterns that may indicate fraud or market manipulation.
+- **Personalized Recommendations**: Tailoring financial advice based on user profile and goals.
+
 ## Project Architecture
 
 ![Architecture Diagram](docs/images/diagram.png)
 
-Suna consists of four main components:
+IOTA DeFiAI consists of four main components:
 
 ### Backend API
 Python/FastAPI service that handles REST endpoints, thread management, and LLM integration with Anthropic, and others via LiteLLM.
@@ -51,35 +107,9 @@ Isolated execution environment for every agent - with browser automation, code i
 ### Supabase Database
 Handles data persistence with authentication, user management, conversation history, file storage, agent state, analytics, and real-time subscriptions.
 
-## Use Cases
-
-1. **Competitor Analysis** ([Watch](https://www.suna.so/share/5ee791ac-e19c-4986-a61c-6d0659d0e5bc)) - *"Analyze the market for my next company in the healthcare industry, located in the UK. Give me the major players, their market size, strengths, and weaknesses, and add their website URLs. Once done, generate a PDF report."*
-
-2. **VC List** ([Watch](https://www.suna.so/share/804d20a3-cf1c-4adb-83bb-0e77cc6adeac)) - *"Give me the list of the most important VC Funds in the United States based on Assets Under Management. Give me website URLs, and if possible an email to reach them out."*
-
-3. **Looking for Candidates** ([Watch](https://www.suna.so/share/3ae581b0-2db8-4c63-b324-3b8d29762e74)) - *"Go on LinkedIn, and find me 10 profiles available - they are not working right now - for a junior software engineer position, who are located in Munich, Germany. They should have at least one bachelor's degree in Computer Science or anything related to it, and 1-year of experience in any field/role."*
-
-4. **Planning Company Trip** ([Watch](https://www.suna.so/share/725e64a0-f1e2-4bb6-8a1f-703c2833fd72)) - *"Generate me a route plan for my company. We should go to California. We'll be in 8 people. Compose the trip from the departure (Paris, France) to the activities we can do considering that the trip will be 7 days long - departure on the 21st of Apr 2025. Check the weather forecast and temperature for the upcoming days, and based on that, you can plan our activities (outdoor vs indoor)."*
-
-5. **Working on Excel** ([Watch](https://www.suna.so/share/128f23a4-51cd-42a6-97a0-0b458b32010e)) - *"My company asked me to set up an Excel spreadsheet with all the information about Italian lottery games (Lotto, 10eLotto, and Million Day). Based on that, generate and send me a spreadsheet with all the basic information (public ones)."*
-
-6. **Automate Event Speaker Prospecting** ([Watch](https://www.suna.so/share/7a7592ea-ed44-4c69-bcb5-5f9bb88c188c)) - *"Find 20 AI ethics speakers from Europe who've spoken at conferences in the past year. Scrapes conference sites, cross-references LinkedIn and YouTube, and outputs contact info + talk summaries."*
-
-7. **Summarize and Cross-Reference Scientific Papers** ([Watch](https://www.suna.so/share/c2081b3c-786e-4e7c-9bf4-46e9b23bb662)) - *"Research and compare scientific papers talking about Alcohol effects on our bodies during the last 5 years. Generate a report about the most important scientific papers talking about the topic I wrote before."*
-
-8. **Research + First Contact Draft** ([Watch](https://www.suna.so/share/6b6296a6-8683-49e5-9ad0-a32952d12c44)) - *"Research my potential customers (B2B) on LinkedIn. They should be in the clean tech industry. Find their websites and their email addresses. After that, based on the company profile, generate a personalized first contact email where I present my company which is offering consulting services to cleantech companies to maximize their profits and reduce their costs."*
-
-9. **SEO Analysis** ([Watch](https://www.suna.so/share/43491cb0-cd6c-45f0-880c-66ddc8c4b842)) - *"Based on my website suna.so, generate an SEO report analysis, find top-ranking pages by keyword clusters, and identify topics I'm missing."*
-
-10. **Generate a Personal Trip** ([Watch](https://www.suna.so/share/37b31907-8349-4f63-b0e5-27ca597ed02a)) - *"Generate a personal trip to London, with departure from Bangkok on the 1st of May. The trip will last 10 days. Find an accommodation in the center of London, with a rating on Google reviews of at least 4.5. Find me interesting outdoor activities to do during the journey. Generate a detailed itinerary plan."*
-
-11. **Recently Funded Startups** ([Watch](https://www.suna.so/share/8b2a897e-985a-4d5e-867b-15239274f764)) - *"Go on Crunchbase, Dealroom, and TechCrunch, filter by Series A funding rounds in the SaaS Finance Space, and build a report with company data, founders, and contact info for outbound sales."*
-
-12. **Scrape Forum Discussions** ([Watch](https://www.suna.so/share/7d7a5d93-a20d-48b0-82cc-e9a876e9fd04)) - *"I need to find the best beauty centers in Rome, but I want to find them by using open forums that speak about this topic. Go on Google, and scrape the forums by looking for beauty center discussions located in Rome. Then generate a list of 5 beauty centers with the best comments about them."*
-
 ## Run Locally / Self-Hosting
 
-Suna can be self-hosted on your own infrastructure. Follow these steps to set up your own instance.
+IOTA DeFiAI can be self-hosted on your own infrastructure. Follow these steps to set up your own instance.
 
 ### Requirements
 
@@ -91,6 +121,7 @@ You'll need the following components:
 - API keys for LLM providers (Anthropic)
 - Tavily API key for enhanced search capabilities
 - Firecrawl API key for web scraping capabilities
+- Access to IOTA Testnet or Mainnet
 
 ### Prerequisites
 
@@ -125,15 +156,11 @@ You'll need the following components:
 5. **Search API Key** (Optional):
    - For enhanced search capabilities, obtain an [Tavily API key](https://tavily.com/)
    - For web scraping capabilities, obtain a [Firecrawl API key](https://firecrawl.dev/)
-  
 
-6. **RapidAPI API Key** (Optional):
-   - To enable API services like LinkedIn, and others, you'll need a RapidAPI key
-   - Each service requires individual activation in your RapidAPI account:
-     1. Locate the service's `base_url` in its corresponding file (e.g., `"https://linkedin-data-scraper.p.rapidapi.com"` in [`backend/agent/tools/data_providers/LinkedinProvider.py`](backend/agent/tools/data_providers/LinkedinProvider.py))
-     2. Visit that specific API on the RapidAPI marketplace
-     3. Subscribe to the service (many offer free tiers with limited requests)
-     4. Once subscribed, the service will be available to your agent through the API Services tool
+6. **IOTA Setup**:
+   - Install the [IOTA TypeScript SDK](https://docs.iota.org/ts-sdk/typescript/)
+   - Set up an IOTA Testnet or Mainnet connection
+   - Install Move development tools for IOTA smart contracts
 
 ### Installation Steps
 
@@ -179,6 +206,10 @@ OPENAI_API_KEY=your_openai_api_key
 TAVILY_API_KEY=your_tavily_api_key  # For enhanced search capabilities
 FIRECRAWL_API_KEY=your_firecrawl_api_key  # For web scraping capabilities
 RAPID_API_KEY=
+
+# IOTA configuration
+IOTA_NODE_URL=https://api.testnet.iota.cafe  # Use testnet for development
+IOTA_EXPLORER_URL=https://explorer.rebased.iota.org/?network=testnet
 ```
 
 3. **Set up Supabase database**:
@@ -207,22 +238,14 @@ NEXT_PUBLIC_SUPABASE_URL=your_supabase_url
 NEXT_PUBLIC_SUPABASE_ANON_KEY=your_supabase_anon_key
 NEXT_PUBLIC_BACKEND_URL="http://localhost:8000/api"  # Use this for local development
 NEXT_PUBLIC_URL="http://localhost:3000"
+NEXT_PUBLIC_IOTA_EXPLORER_URL=https://explorer.rebased.iota.org/?network=testnet
 ```
 
-   Note: If you're using Docker Compose, use the container name instead of localhost:
-```
-NEXT_PUBLIC_BACKEND_URL="http://backend:8000/api"  # Use this when running with Docker Compose
-```
-
-5. **Install dependencies**:
+5. **Install IOTA SDK**:
 ```bash
-# Install frontend dependencies
+# Install IOTA TypeScript SDK in the frontend
 cd frontend
-npm install
-
-# Install backend dependencies
-cd ../backend
-pip install -r requirements.txt
+npm install @iota/iota-sdk
 ```
 
 6. **Start the application**:
@@ -239,38 +262,10 @@ cd backend
 python api.py
 ```
 
-5-6. **Docker Compose Alternative**:
-
-Before running with Docker Compose, make sure your environment files are properly configured:
-- In `backend/.env`, set all the required environment variables as described above
-  - For Redis configuration, use `REDIS_HOST=redis` instead of localhost
-  - The Docker Compose setup will automatically set these Redis environment variables:
-    ```
-    REDIS_HOST=redis
-    REDIS_PORT=6379
-    REDIS_PASSWORD=
-    REDIS_SSL=False
-    ```
-- In `frontend/.env.local`, make sure to set `NEXT_PUBLIC_BACKEND_URL="http://backend:8000/api"` to use the container name
-
-Then run:
-```bash
-export GITHUB_REPOSITORY="your-github-username/repo-name"
-docker compose -f docker-compose.ghcr.yaml up
-```
-
-If you're building the images locally instead of using pre-built ones:
-```bash
-docker compose up
-```
-
-The Docker Compose setup includes a Redis service that will be used by the backend automatically.
-
-
-7. **Access Suna**:
+7. **Access IOTA DeFiAI**:
    - Open your browser and navigate to `http://localhost:3000`
    - Sign up for an account using the Supabase authentication
-   - Start using your self-hosted Suna instance!
+   - Start exploring intelligent decentralized finance on IOTA!
 
 ## Acknowledgements
 
@@ -280,17 +275,14 @@ The Docker Compose setup includes a Redis service that will be used by the backe
 - [Marko Kraemer](https://twitter.com/markokraemer)
 
 ### Technologies
+- [IOTA](https://www.iota.org/) - Feeless, scalable blockchain
+- [Move](https://docs.iota.org/developer/iota-101/move-overview/) - Smart contract language for IOTA Rebased
 - [Daytona](https://daytona.io/) - Secure agent execution environment
-- [Supabase](https://supabase.com/) -
+- [Supabase](https://supabase.com/) - Database and authentication
 - [Playwright](https://playwright.dev/) - Browser automation
-- [OpenAI](https://openai.com/) - LLM provider
 - [Anthropic](https://www.anthropic.com/) - LLM provider
-- [Tavily](https://tavily.com/) - Search capabilities
-- [Firecrawl](https://firecrawl.dev/) - Web scraping capabilities
-- [RapidAPI](https://rapidapi.com/) - API services
-
 
 ## License
 
-Kortix Suna is licensed under the Apache License, Version 2.0. See [LICENSE](./LICENSE) for the full license text.
+IOTA DeFiAI is licensed under the Apache License, Version 2.0. See [LICENSE](./LICENSE) for the full license text.
 
